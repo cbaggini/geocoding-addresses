@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  {% load rest_framework %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geocoder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <!-- <link href= {% static "baresoil/style.css" %} rel="stylesheet"></link> -->
+  </head>
+  <body class="has-navbar-fixed-top">
+    <nav class="navbar is-link is-fixed-top" id = "nb" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item has-text-primary-dark has-background-link-light is-size-3 has-text-justified pr-5 pl-5" 
+          href="">
+            <strong>Address geocoder</strong>
+          </a>
+        </div>
+      
+        <div id="navbar1" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="/api">
+              API interface
+            </a>
+          </div>
+        </div>
+      </nav>
+  <section class="section ">
+    <div class="columns is-centered">
+        <div class="column is-half ">
+            <form method="post" >
+                {% csrf_token %}
+                {% for field in form %}
+                  <div class="field">
+                      {{ field.errors }}
+                      <label class="label">{{ field.label}} </label>
+                      <div class="control">
+                        {{ field }}
+                      </div>
+                      {% if field.help_text %}
+                      <p class="help">{{ field.help_text|safe }}</p>
+                      {% endif %}
+                  </div>
+                {% endfor %}
+                <input class="button is-link" type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="column is-half">
+            {% if geocoded_address.lon %}
+            <div class="notification is-success">
+                <strong>Your address is:<br>
+                  {{ geocoded_address }}</strong>
+            </div>
+            <div id = 'map'>
+              {{address_map|safe}}
+            </div>
+            {% elif geocoded_address %}
+            <div class="notification is-warning">
+              <strong>Your address is not valid. </strong>
+            </div>
+            {% endif %}
+        </div>
+      </div>
+  </section>
+  </body>
+</html>

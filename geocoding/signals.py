@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from geopy.geocoders import GoogleV3
 
 from .models import Address
-from staiy import params
+from django_project import params
 
 @receiver(post_save, sender=Address)
 def geocode(instance, **kwargs):

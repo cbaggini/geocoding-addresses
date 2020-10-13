@@ -23,10 +23,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This Django app automatically adds an address' coordinates to the corresponding database table after a new address is saved.
+<p>This Django app automatically adds an address' coordinates to the corresponding database table after a new address is saved.
 It uses a post-save signal to send a request to Google Maps Geocoding API and writes the coordinates to database if the API returns a unique address. In this case, the "status" column in the database will read "Success".
-Otherwise, the "status" column of the table is "No address found" (if no results returned) or "More than one address" (if the API returns more than one possible address).
-The app needs to be connected to a local or remote instance of a PostGIS database.
+Otherwise, the "status" column of the table is "No address found" (if no results returned) or "More than one address" (if the API returns more than one possible address).</p>
+<p>The app needs to be connected to a local or remote instance of a PostGIS database.</p>
 
 
 <!-- GETTING STARTED -->

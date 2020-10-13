@@ -50,6 +50,7 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+geocoding/test_addresses.csv
 
 # Translations
 *.mo

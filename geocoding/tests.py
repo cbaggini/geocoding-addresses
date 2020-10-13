@@ -5,7 +5,7 @@ import csv
 
 from .models import Address
 
-# csv file with addresses and coordinates for testing is not included in GitHub repo.
+# csv file with addresses and coordinates for testing is not included in GitHub repo. Can be downloaded from OpenAddresses.io
 
 class AddressTestCase(TestCase):
 
@@ -20,7 +20,7 @@ class AddressTestCase(TestCase):
                 geocoded_address = Address.objects.get(street=row[3],number=row[2],city=row[4])
                 coords = row[10].strip('][').split(', ') 
                 self.assertEqual(geocoded_address.status,'Success')
-                # rounded to 2 decimals - that's an error of just over 1 km
+                # rounded to 2 decimals - that's an error of between 1 and 2 km
                 self.assertEqual(round(geocoded_address.lon,2), round(float(coords[0]),2))
                 self.assertEqual(round(geocoded_address.lat,2), round(float(coords[1]),2))
 

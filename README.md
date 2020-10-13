@@ -36,9 +36,9 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-Python >= 3.7
+Python >= 3.7<br>
 
-A PostGIS database
+A PostGIS database<br>
 
 A Google Maps API key [(instructions on how to get one here)](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
@@ -53,13 +53,13 @@ git clone https://github.com/cbaggini/geocoding-addresses.git
 ```sh
 pip install requirements.txt
 ```
-3. Add params.py to the django_project folder. The file should contain the following variables:
+3. Add params.py to the django_project folder. The file should contain the following variables: <br>
 
-GOOGLE_API_KEY: Your API key for Google Maps
-RDS_DB_NAME: The database name
-RDS_USERNAME: The database admin username
-RDS_PASSWORD: The database admin password
-RDS_HOSTNAME: Link to remote database or IP for local database instance
+GOOGLE_API_KEY: Your API key for Google Maps <br>
+RDS_DB_NAME: The database name <br>
+RDS_USERNAME: The database admin username <br>
+RDS_PASSWORD: The database admin password <br>
+RDS_HOSTNAME: Link to remote database or IP for local database instance <br>
 RDS_PORT: The database port
 
 <!-- USAGE EXAMPLES -->

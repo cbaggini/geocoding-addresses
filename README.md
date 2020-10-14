@@ -61,6 +61,7 @@ RDS_USERNAME: The database admin username <br>
 RDS_PASSWORD: The database admin password <br>
 RDS_HOSTNAME: Link to remote database or IP for local database instance <br>
 RDS_PORT: The database port
+SECRET_KEY: The Django project secret key
 
 <!-- USAGE EXAMPLES -->
 ## Usage

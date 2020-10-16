@@ -42,7 +42,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-#TODO: do I need cors?
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -144,7 +143,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# TODO: we whitelist localhost:3000 because that's where frontend will be served
+# we whitelist localhost:3000 because that's where frontend will be served
 CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:3000',
     'http://127.0.0.1:8000'
